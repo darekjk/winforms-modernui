@@ -40,9 +40,11 @@ namespace MetroFramework.Components
                     return;
 
                 ownerForm = value;
-                ownerForm.ControlAdded += new ControlEventHandler(NewControlOnOwnerForm);
-                
-                UpdateOwnerForm();
+                if(value != null)
+                {
+                    ownerForm.ControlAdded += new ControlEventHandler(NewControlOnOwnerForm);
+                    UpdateOwnerForm();
+                }  
             }
         }
 
