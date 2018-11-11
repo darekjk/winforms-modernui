@@ -215,7 +215,9 @@ namespace MetroFramework.Forms
             {
                 if (!metroDropShadowForm.IsDisposed)
                 {
-                    metroDropShadowForm.Owner = null;
+                    if(metroDropShadowForm.Owner != null)
+                        metroDropShadowForm.Owner = null;
+                        
                     metroDropShadowForm.Dispose();
                     metroDropShadowForm = null;
                 }
